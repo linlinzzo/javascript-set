@@ -29,7 +29,7 @@ function subset(a, b) {
 }
 
 /***
-prosubset(a, b)检验 a 是否为 b 的真子集
+prosubset(a, b)检验 a 是否为 b 的真子集（有序）
 u = ["1","2"]
 >>> (2) ['1', '2']
 prosubset(o,p)
@@ -70,8 +70,43 @@ function prosuperset(a, b) {
 让我想一想
 ***/
 
+/***
+comset(a, b)输出 a 和 b 的补集（无序）
+k = ["111","222"]
+>>> (2) ['111', '222']
+g = ["111","222","333","444"]
+>>> (4) ['111', '222', '333', '444']
+comset(k,g)
+>>> (2) ['333', '444']
+comset(g,k)
+>>> (2) ['333', '444']
+s= ["111","222"]
+>>> (2) ['111', '222']
+comset(k,s)
+>>> null
+***/
+
 function comset(a, b) {
   // 等会补集要加到 r 中
   var r = new Array(1);
-  // 等会再写
+  r.pop();
+  var i = 0;
+  if (a.length > b.length) {
+    var c = a;
+    var d = b;
+  } else if (a.length < b.length) {
+    var d = a;
+    var c = b;
+  } else {
+    return null;
+  }
+  while (Boolean(c) === true && i < c.length) {
+    if (d.includes(c[i]) === false) {
+      r.push(c[i]);
+    }
+    i++;
+  }
+  if (Boolean(c) === true) {
+    return r;
+  }
 }
