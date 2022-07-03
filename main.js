@@ -1,40 +1,42 @@
 /***
-subset(a,b)用于测试 a 是否为 b 的子集
-w = ["aaa","bbb"];
->>> (2) ['aaa', 'bbb']
-q = ["bbb","ccc"];
->>> (2) ['bbb', 'ccc']
-subset(w,q)
->>> false
-r = ["aaa","bbb","ccc"]
->>> (3) ['aaa', 'bbb', 'ccc']
-subset(w,r)
->>> true
-***/
-
-/*** 
-这里好像出现了意外
-s = ["1","2"];
+subset(a,b)用于测试 a 是否为 b 的子集（有序）
+p = ["1","2"]
 >>> (2) ['1', '2']
-d = ["1"];
+o = ["1"]
 >>> ['1']
-subset(s,d)
+subset(p,o)
+>>> false
+subset(o,p)
 >>> true
-此时 s 不是 d 的子集啊
-出什么问题了
 ***/
 
 function subset(a, b) {
-  var x;
-  for (x = 0; x < a.length; x++) {
-    var y = a[x];
-    if (b.includes(y) === false) {
-      return false;
-      break; 
+  var i = 0;
+  var y = a[i];
+  while (i < a.length && b.includes(a[i]) === true) {
+    if (i == a.length - 1) {
+      var n = 0;
+    } else {
+      var n = 1;
     }
+    i++;
+  }
+  if (n == 0) {
     return true;
+  } else {
+    return false;
   }
 }
+
+/***
+prosubset(a, b)检验 a 是否为 b 的真子集
+u = ["1","2"]
+>>> (2) ['1', '2']
+prosubset(o,p)
+>>> true
+prosubset(u,p)
+>>> false
+***/
 
 function prosubset(a, b) {
   if (subset(a, b) === true) {
