@@ -29,6 +29,34 @@
     var xb = b.split(",");
   document.getElementById("xp").innerHTML = issuperset(xa, xb);
   }
+  function zhenchaoji() {
+    var a = document.getElementById("a").value;
+    var xa = a.split(",");
+    var b = document.getElementById("b").value;
+    var xb = b.split(",");
+  document.getElementById("xp").innerHTML = isprosuperset(xa, xb);
+  }
+  function buji() {
+    var a = document.getElementById("a").value;
+    var xa = a.split(",");
+    var b = document.getElementById("b").value;
+    var xb = b.split(",");
+  document.getElementById("xp").innerHTML = comset(xa, xb);
+  }
+  function heji() {
+    var a = document.getElementById("a").value;
+    var xa = a.split(",");
+    var b = document.getElementById("b").value;
+    var xb = b.split(",");
+  document.getElementById("xp").innerHTML = union(xa, xb);
+  }
+  function chaji() {
+    var a = document.getElementById("a").value;
+    var xa = a.split(",");
+    var b = document.getElementById("b").value;
+    var xb = b.split(",");
+  document.getElementById("xp").innerHTML = diffset(xa, xb);
+  }
   </script>
 </head>
 <body>
@@ -47,9 +75,13 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button class="btn btn-default" onclick="ziji()">检验是否为子集</button>
-      <button class="btn btn-default" onclick="zhenziji()">检验是否为真子集</button>
-      <button class="btn btn-default" onclick="chaoji()">检验是否为超集</button>
+      <button class="btn btn-default" onmouseover="ziji()">检验是否为子集</button>
+      <button class="btn btn-default" onmouseover="zhenziji()">检验是否为真子集</button>
+      <button class="btn btn-default" onmouseover="chaoji()">检验是否为超集</button>
+      <button class="btn btn-default" onmouseover="zhenchaoji()">检验是否为真超集</button>
+      <button class="btn btn-default" onmouseover="buji()">输出补集</button>
+      <button class="btn btn-default" onmouseover="heji()">输出并集</button>
+      <button class="btn btn-default" onmouseover="chaji()">输出差集</button>
     </div>
   </div>
 </form>
