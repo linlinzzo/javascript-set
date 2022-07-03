@@ -48,3 +48,30 @@ function prosubset(a, b) {
     return false; //子集关系都不存在
     }
   }
+
+/***
+给超集和真超集写代码真没意思
+不就和子集和真子集相反吗
+算了应付一下
+***/
+
+function superset(a, b) {
+  return subset(b, a);
+}
+
+function prosuperset(a, b) {
+  return prosubset(b, a);
+}
+
+/***
+绝对补集
+并集
+差集
+让我想一想
+***/
+
+function comset(a, b) {
+  // 等会补集要加到 r 中
+  var r = new Array(1);
+  // 等会再写
+}
