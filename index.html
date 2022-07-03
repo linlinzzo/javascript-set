@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>JavaScript 集合 Demo</title>
-<script src="/main.js"></script>
+<script src="main.js"></script>
 <script>
   function ziji {
-    var a = document.getElementById("a").value
-    var b = document.getElementById("a").value
-  document.getElementById("p1").innerHTML=issubset(a, b);
+    var a = document.getElementById("a").value;
+    var xa = a.split(",");
+    var b = document.getElementById("a").value;
+    var xb = b.split(",");
+  document.getElementById("p1").innerHTML=issubset(xa, xb);
   }
   </script>
 </head>
@@ -17,13 +19,13 @@
   <div class="form-group">
     <label for="a" class="col-sm-2 control-label">请输入A</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="a" placeholder="请输入A（不同元素用空格分隔）">
+      <input type="text" class="form-control" id="a" placeholder="请输入A（不同元素用英文逗号分隔）">
     </div>
   </div>
   <div class="form-group">
-    <label for="b" class="col-sm-2 control-label">姓</label>
+    <label for="b" class="col-sm-2 control-label">B</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="b" placeholder="请输入B（不同元素用空格分隔）">
+      <input type="text" class="form-control" id="b" placeholder="请输入B（不同元素用英文逗号分隔）">
     </div>
   </div>
   <div class="form-group">
