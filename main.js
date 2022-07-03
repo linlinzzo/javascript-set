@@ -110,3 +110,35 @@ function comset(a, b) {
     return r;
   }
 }
+
+/***
+无聊写一写并集
+感觉 includes 方法要用好多遍啊
+
+union(k,g)
+>>> (2) ['111', '222']
+union(k,s)
+>>> (2) ['111', '222']
+f =[""]
+>>> ['']
+union(f,k)
+>>> []
+***/
+
+function union(a, b) {
+  // 等会并集还是一样加到 r 中
+  var r = new Array(1);
+  r.pop();
+  var i = 0;
+  while (i < a.length) {
+    if (b.includes(a[i]) === true) {
+      r.push(a[i]);
+    }
+    i++;
+  }
+  /*** 
+  这个东西好像跟位置没关系吧
+  最后在输出结果 r
+  ***/
+  return r;
+}
