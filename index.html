@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript 集合 Demo</title>
+<script src="/main.js"></script>
+<script>
+  function ziji {
+    var a = document.getElementById("a").value
+    var b = document.getElementById("a").value
+  document.getElementById("p1").innerHTML=issubset(a, b);
+  }
+  </script>
+</head>
+<body>
+    <form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="a" class="col-sm-2 control-label">请输入A</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="a" placeholder="请输入A（不同元素用空格分隔）">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="b" class="col-sm-2 control-label">姓</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="b" placeholder="请输入B（不同元素用空格分隔）">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-default">检验是否为子集</button>
+    </div>
+  </div>
+</form>
+  <p id="p1">这里用来显示结果</p>
+</body>
+</html>
